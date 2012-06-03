@@ -1,0 +1,16 @@
+﻿{
+    "name": "hello",
+    "version": "1.0",
+    "description": "hello world",
+    "background_page": "main.html",
+    "permissions": [
+        "notifications"  
+    ],
+    "content_scripts": [
+        {
+            "matches": ["http://www.baidu.com/*"],
+            "js": ["alert.js"]
+        }
+    ]
+}
+

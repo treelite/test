@@ -1,0 +1,28 @@
+﻿<html>
+<script type="text/javascript">
+var handler = {},
+    data = {};
+
+function notifications(message) {
+    var notification = webkitNotifications.createNotification(
+            null, 
+            'Price Notification',
+            message
+        );
+    notification.show();
+}
+
+chrome.extension.onRequest.addListener(function (request){
+    if (handler[request.name]) {
+        handler[request.name].apply(null, request.params);
+    }
+});
+
+handler['checkPrice'] = function (price) {
+    if (data['price'] && price > data['price']) {
+        notifications('new price:' + price);
+    }
+    data['price'] = price;
+}
+</script>
+</html>

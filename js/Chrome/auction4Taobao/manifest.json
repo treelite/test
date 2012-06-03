@@ -1,0 +1,16 @@
+﻿{
+    "name": "Auction4Tabao",
+    "version": "1.0",
+    "description": "Tabao拍卖",
+    "background_page": "main.html",
+    "permissions": [
+        "notifications"  
+    ],
+    "content_scripts": [
+        {
+            "matches": ["http://item.taobao.com/item.html"],
+            "js": ["auction.js"]
+        }
+    ]
+}
+

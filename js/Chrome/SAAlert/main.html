@@ -1,0 +1,26 @@
+﻿<html>
+<script type="text/javascript">
+var handler = {},
+    data = {};
+
+function notifications(message) {
+    var notification = webkitNotifications.createNotification(
+            'http://www.southwest.com/assets/images/favicon.ico', 
+            'Message Notification',
+            message
+        );
+    notification.show();
+}
+
+chrome.extension.onRequest.addListener(function (request){
+    if (handler[request.name]) {
+        handler[request.name].apply(null, request.params);
+    }
+});
+
+handler['alert'] = function (data) {
+    notifications(data);
+}
+
+</script>
+</html>

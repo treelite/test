@@ -1,0 +1,16 @@
+﻿{
+    "name": "SouthwestAirlines",
+    "version": "1.0",
+    "description": "Southwest Airlines",
+    "background_page": "main.html",
+    "permissions": [
+        "notifications"  
+    ],
+    "content_scripts": [
+        {
+            "matches": ["http://www.southwest.com/reservations/price-reservations.html*"],
+            "js": ["alert.js"]
+        }
+    ]
+}
+
