@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WebSocket Test</title>
+    <style type="text/css">
+        .messages {border:1px solid #CCC;border-radius:5px}
+        .message {margin:5px;border-bottom:1px solid #CCC}
+        .message:last-child {border-bottom:none}
+    </style>
+</head>
+<body>
+    <h1>Question</h1>
+    <div id="messageArea" class="messages"></div>
+    <script type="text/javascript">
+        var ws = new WebSocket('ws://172.21.203.37:8080/'),
+            messages = [];
+
+        function showMessage(msg) {
+            var area = document.getElementById('messageArea');
+
+            area.innerHTML += '<p class="message">' + msg + '</p>';
+        }
+
+        function start() {
+            var msg;
+
+            if (messages.length < 1) {
+                return;
+            }
+
+            msg = messages.pop();
+            showMessage(msg);
+            setTimeout(start, 1000);
+        }
+
+        function addMessage(msg) {
+            messages.push(msg);
+            if(messages.length == 1) {
+                start();
+            }
+        }
+
+        ws.onmessage = function (data) {
+            var msgArea = document.getElementById('messageArea'),
+                msg = JSON.parse(data.data);
+
+            if (msg.type == 'message') {
+                addMessage(msg.data);
+            }
+        }
+    </script>
+</body>
+</html>

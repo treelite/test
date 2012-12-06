@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Ask</title>
+    <style type="text/css">
+        .box {width: 500px;margin:0 auto;margin-top:50px;border:1px solid #CCC;border-radius:5px;position:relative;padding:10px}
+        .pt {position:absolute;top:-20px;right:-50px;-moz-transform:rotate(10deg);-webkit-transform:rotate(10deg)}
+        .error {color:#F00}
+    </style>
+    <script type="text/javascript" src="tangram-1.5.2.2.js"></script>
+</head>
+<body>
+    <div class="box">
+        <p class="pt">想问啥就问啥，聊聊八卦也很好~</p>
+        <form action="/message" method="post" id="qForm"> 
+            <p><input type="text" name="message" style="width:500px"/></p>
+            <p><input type="submit" value="提问" id="btn" />&nbsp;<span id="error" class="error"></span></p>
+        </form>
+    </div>
+    <script type="text/javascript">
+        baidu.dom.g('qForm').onsubmit = function () {
+            var form = this, msg, pass = true;
+                btn = baidu.dom.g('btn'),
+                msgEle = form['message'],
+                errEle = baidu.dom.g('error');
+
+            errEle.innerHTML = '';
+            msg = msgEle.value = baidu.string.trim(msgEle.value);
+
+            if (msg.length <= 0) {
+                errEle.innerHTML = '亲~ 写点啥吧~';
+                pass = false;
+            }
+            else if (msg.length > 150) {
+                errEle.innerHTML = '亲~ 150字就够啦~';
+                pass = false;
+            }
+
+            if (pass) {
+                btn.value = '正在提问...';
+                btn.disabled = true;
+                baidu.ajax.post('/message', 'message=' + encodeURIComponent(msg), function () {
+                    msgEle.value = '';
+                    btn.disabled = false;
+                    btn.value = '提问';
+                });
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

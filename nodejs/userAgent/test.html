@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>UserAgent</title>
+    </head>
+    <body>
+        <form id="form" action="collection" method="post">
+            <p>
+                <strong>Platform:</strong>
+                <input type="radio" name="type" value="1" id="type-pc" /><label for="type-pc">PC</label>
+                <input type="radio" name="type" value="2" id="type-mobile" /><label for="type-mobile">Mobile</label>
+                <input type="radio" name="type" value="2" id="type-pad" /><label for="type-pad">Pad</label>
+            </p>
+            <p>
+                <input type="submit" value="Submit" />&nbsp;<span id="error" style="color:#F00"></span>
+                <input type="hidden" name="userAgent" />
+            </p>
+        </form>
+        <script type="text/javascript">
+            var form = document.getElementById('form');
+            
+            form['userAgent'].value = navigator.userAgent;
+            form.onsubmit = function () {
+                var types = form['type'];
+                var res = false;
+
+                for (var i = 0, len = types.length; i < len; i++) {
+                    res = types[i].checked || res;
+                }
+
+                if (!res) {
+                    document.getElementById('error').innerHTML = 'Please choose your platform';
+                }
+
+                return res;
+            }
+        </script>
+    </body>
+</html>
