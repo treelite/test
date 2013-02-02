@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Turn</title>
+        <style>
+            .container {
+                width: 160px;
+                height: 171px;
+                border: 1px solid #CCC;
+                position: relative;
+                -webkit-perspective: 500px;
+                -moz-perspective: 500px;
+            }
+
+            .container img {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+
+            .container .pic2 {
+                opacity: 0;
+                -webkit-transform: rotateY(-180deg);
+                -moz-transform: rotateY(-180deg);
+            }
+
+            .container.animate .pic1 {
+                opacity: 0;
+                -webkit-transform: rotateY(180deg);
+                -moz-transform: rotateY(180deg);
+                -webkit-transition: -webkit-transform 2s cubic-bezier(0.6, 0.1, 0.4, 0.9), opacity 1s step-end;
+                -moz-transition: -moz-transform 2s cubic-bezier(0.6, 0.1, 0.4, 0.9), opacity 1s step-end;
+                /*-webkit-transition: -webkit-transform 2s ease-in-out, opacity 1s step-end;*/
+            }
+
+            .container.animate .pic2 {
+                opacity: 1;
+                -webkit-transform: rotateY(0deg);
+                -moz-transform: rotateY(0deg);
+                -webkit-transition: -webkit-transform 2s cubic-bezier(0.6, 0.1, 0.4, 0.9), opacity 1s step-end;
+                -moz-transition: -moz-transform 2s cubic-bezier(0.6, 0.1, 0.4, 0.9), opacity 1s step-end;
+                /*-webkit-transition: -webkit-transform 2s ease-in-out, opacity 1s step-end;*/
+            }
+            /*
+            .pic:hover {
+                -webkit-transform: rotateY(90deg);
+                -webkit-transition
+            }
+            */
+        </style>
+    </head>
+    <body>
+        <div class="container" id="content"> 
+            <img class="pic1" src="pic/face.jpg" width="160" height="171" />
+            <img class="pic2" width="160" height="171" />
+        </div>
+        <script>
+            var urls = ['pic/mrx.jpg', 'pic/face.jpg'];
+            var index = 0;
+            function switchImg(ele, url) {
+                var imgs = ele.getElementsByTagName('img');
+
+                if (imgs[1].src) {
+                    imgs[0].src = imgs[1].src;
+                    ele.className = ele.className.replace(/\s+animate/, '');
+                }
+
+                imgs[1].onload = function () {
+                    ele.className += ' animate';
+                    go();
+                };
+
+                imgs[1].src = url;
+            }
+
+            function go() {
+                setTimeout(function () {
+                    switchImg(document.getElementById('content'), urls[(index++) % 2]);
+                }, 5000);
+            }
+
+            go();
+        </script>
+    </body>
+</html>

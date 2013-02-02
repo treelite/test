@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JS Pollution</title>
+    </head>
+    <body>
+        <h1>Hello Pollution</h1>
+        <div id="content"></div>
+        <a href="#" id="btn">Open</a>
+        <script type="text/javascript">
+            /*
+            document.getElementById = function (id) {
+                alert('Ops....');
+            };
+            window.open = function () {
+                alert('Ops...too...');
+            };
+            */
+        </script>
+        <script type="text/javascript" src="pollution.js"></script>
+        <script type="text/javascript">
+            pollution.ready(function (Q) {
+                Q.g('content').innerHTML = 'it work!';
+                Q.g('btn').onclick = function () {
+                    Q.open('http://www.google.com.hk');
+                };
+            });
+        </script>
+    </body>
+</html>
