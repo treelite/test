@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Edp-mb Example Site</title>
+    <!--
+    <script src="http://fe.bdimg.com/ecom/esl-1.2.0.js"></script> 
+    <link rel="stylesheet" href="lib/ui/0.1/src/button.css" />
+    -->
+    <script src="loader/esl-1.2.0.js"></script> 
+    
+    <script>
+    require.config({
+        baseUrl: 'src',
+        paths: { 
+            'util': 'common/util',
+            'tangram': '../other/tangram'
+        },
+        packages: [ 
+            {
+                name: 'ui',
+                location: '../lib/ui/0.1/src',
+                main: 'main'
+            }
+        ]
+    });
+    </script>
+    
+</head>
+
+<body>
+    <h1 id="title"></h1>
+    <p>Please input your name: <input type="text" id="name" /></p>
+    <p><span data-ui="type:button;id:btn">Submit</span></p>
+<script>
+    require(['home/main'], function (main) {
+        main.enter('title');
+    });
+</script>
+</body>
+</html>

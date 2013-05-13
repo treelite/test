@@ -4,33 +4,42 @@
         <meta charset="utf-8" />
         <title>Test</title>
         <style type="text/css">
-            html, body {
-                margin: 0px;
-                padding: 0px;
-                height: 100%;
-            }
-            .container {
+            .angle {
+                position: fixed;
+                bottom: 0px;
+                right: 0px;
+                width: 80px;
+                height: 80px;
+                overflow: hidden;
+                cursor: pointer;
+            } 
+            .angle-inner {
                 position: absolute;
                 top: 0px;
                 left: 0px;
-                right: 0px;
-                bottom: 30px;
-                width: 100%;
+                width: 160px;
+                height: 160px;
                 background: #CCC;
-                _height: expression(this.offsetParent.clientHeight - 30 + 'px');
+                -webkit-border-radius: 80px;
+                -moz-border-radius: 80px;
+                -o-border-radius: 80px;
+                border-radius: 80px;
             }
-            .footer {
+
+            .angle-inner strong {
                 position: absolute;
-                bottom: 0px;
-                height: 28px;
-                background: #F00;
-                left: 0px;
-                right: 0px;
+                top: 35px;
+                left: 20px;
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
             }
         </style>
     </head>
     <body>
-        <div class="container"><div class="inner">xxxx</div></div>
-        <div class="footer">xxxx</div>
+        <div class="angle">
+            <div class="angle-inner"><strong>免费咨询</strong></div>
+        </div>
     </body>
 </html>

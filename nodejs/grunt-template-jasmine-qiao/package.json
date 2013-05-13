@@ -1,0 +1,12 @@
+{
+  "name": "grunt-template-jasmine-qiao",
+  "version": "0.1.0",
+  "description": "ERROR: No README.md file found!",
+  "main": "src/grunt-template-jasmine-qiao.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": "",
+  "author": "cxl",
+  "license": "BSD"
+}
