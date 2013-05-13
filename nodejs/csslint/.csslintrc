@@ -1,0 +1,3 @@
+--warnings=important,import
+
+--ignore=ids,box-model,overqualified-elements,duplicate-background-images,outline-none,text-indent

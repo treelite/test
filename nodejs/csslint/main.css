@@ -1,0 +1,399 @@
+#content h3 {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#content h3 em {
+    font-weight: bold;
+}
+
+#content h3 .more {
+    font-weight: normal;
+}
+
+#content .col {
+    float: left;
+    margin: 0px 5px;
+    width: 48%;
+}
+
+#content .box {
+    border: 1px solid #CDCDCD;
+    padding: 5px;
+}
+
+#content .more {
+    float: right;
+}
+
+#content .table table {
+    border-collapse: collapse;
+}
+
+#content .table th {
+    padding: 3px;
+    font-weight: bold;
+    border-bottom: 1px solid #ACACAC;
+}
+
+#content .table td {
+    padding: 3px;
+    border-top: 1px solid #D3D3D3;
+}
+
+#content .num {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin-right: 3px;
+    color: #FFF;
+    line-height: 18px;
+    text-align: center;
+    vertical-align: middle;
+    *display: inline;
+    *zoom: 1;
+    overflow: hidden;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+}
+
+#content .num-0 {
+    background: #ff9000;
+}
+
+#content .num-1 {
+    background: #9dcb09;
+}
+
+#content .num-2 {
+    background: #71bde9;
+}
+
+#content .num-3 {
+    background: #de6829;
+}
+
+#content .num-4 {
+    background: #edce00;
+}
+
+#content .rate {
+    display: inline-block;
+    width: 50px;
+    height: 10px;
+    margin-left: 3px;
+    vertical-align: middle;
+    overflow: hidden;
+    *display: inline;
+    *zoom: 1;
+}
+
+#content .rate em {
+    display: block;
+    height: 10px;
+    background: #88D5F8;
+}
+
+
+#daily-report {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #CCC;
+}
+
+#daily-report:after {
+    content: ' ';
+    display: block;
+    clear: both;
+    height: 1px;
+    overflow: hidden;
+    visibility: hidden;
+    zoom: 1;
+}
+
+#daily-report dl {
+    float: left;
+    margin-left: 10px;
+}
+
+#daily-report dl.col-a {
+    width: 60%;
+}
+
+#daily-report dl.col-b {
+    width: 35%;
+}
+
+#daily-report dt {
+    padding-bottom: 5px;
+}
+
+#daily-report dd {
+    height: 80px;
+    border: 1px solid #CCC;
+    padding: 10px 0px;
+}
+
+#daily-report div {
+    float: left;
+    width: 48%;
+}
+
+#daily-report div.lst {
+    border-left: 1px solid #CCC;
+}
+
+#daily-report .col-b div {
+    padding-top: 10px;
+}
+
+#daily-report p {
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+#daily-report p a {
+    margin: 0px 3px;
+}
+
+#daily-report strong {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0079F5;
+}
+
+#daily-report .lst strong {
+    color: #F55C00;
+}
+
+#report-date {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#report-date a {
+    display: inline-block;
+    position: relative;
+    margin: 0px 1px;
+    padding: 0px 15px;
+    background: #ABABAB;
+    color: #FFF;
+    z-index: 1;
+    *width: 80px;
+    *display: inline;
+    *zoom: 1;
+}
+
+#report-date a:hover {
+    background: #81A8E1;
+}
+
+#report-date a span {
+    display: none;
+}
+
+#report-date a.cur {
+    background: #1A45A5;
+    cursor: default;
+}
+
+#report-date a.cur span {
+    display: block;
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    margin-left: -6px;
+    background: #1A45A5;
+    height: 12px;
+    width: 12px;
+    z-index: -1;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#tel-report, 
+#region-report,
+#time-report,
+#source-report {
+    margin-bottom: 15px;
+}
+
+#tel-report h3,
+#time-report h3 {
+    position: relative;
+}
+
+#tel-report h3 a,
+#time-report h3 a {
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+#tel-report h3 .legend,
+#time-report h3 .legend {
+    position: absolute;
+    font-weight: bold;
+    top: 0px;
+    right: 0px;
+}
+
+#tel-report h3 .legend input,
+#time-report h3 .legend input {
+    margin: 0px 5px 0px 10px;
+    vertical-align: middle;
+}
+
+#tel-report h3 .legend .flag,
+#time-report h3 .legend .flag {
+    display: inline-block;
+    margin-right: 3px;
+    width: 8px;
+    height: 8px;
+    background: #FFF;
+    overflow: hidden;
+    *display: inline;
+    *zoom: 1;
+}
+
+#province-report .chart,
+#media-report .chart {
+    float: left;
+    width: 150px;
+    height: 150px;
+}
+
+#province-report .table,
+#media-report .table {
+    margin-left: 150px;
+}
+
+#city-report .col-1,
+#unit-report .col-1 {
+    width: 130px;
+}
+
+#province-report .table .col-3 {
+    width: 45px;
+}
+
+#recommand {
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    padding-top: 45px;
+    margin-left: -361px;
+    width: 722px;
+    background: #EAF2FB;
+    z-index: 1000;
+    -webkit-box-shadow: 0px 0px 8px #333;
+    *border: 1px solid #333;
+}
+
+#recommand h3 {
+    position: absolute;
+    width: 103px;
+    height: 100px;
+    left: -5px;
+    top: -3px;
+    background: url(img/icon.png) 0px 0px no-repeat;
+    text-indent: -10000px;
+    z-index: 1;
+}
+
+#recommand .icon-close {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+}
+
+#recommand .rec-item {
+    position: relative;
+    padding: 20px 45px 20px 115px;
+    background: url(img/bg.png) 0px 0px repeat-x;
+}
+
+#recommand .rec-item .btn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    padding: 0px 15px;
+    background: #FEB330;
+    border-bottom: 3px solid #ED8D1B;
+    color: #FFF;
+    font-size: 14px;
+    line-height: 24px;
+    *display: inline;
+    *zoom: 1;
+}
+
+#recommand .rec-item-cs {
+    background-position: 0px -150px;
+}
+
+#recommand .rec-item .icon {
+    position: absolute;
+    top: 20px;
+    left: 45px;
+}
+
+#recommand .rec-item h4 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    font-family: '黑体';
+}
+
+#recommand .rec-item p {
+    margin-bottom: 5px;
+}
+
+#recommand .rec-item p.intro {
+    color: #4B4B4B;
+    font-size: 14px;
+}
+
+#recommand .rec-item p.gift {
+    color: #F00;
+}
+
+#recommand .rec-opt {
+    position: relative;
+    background: #BDD4EF;
+    padding-top: 20px;
+    height: 55px;
+    text-align: center;
+}
+
+#recommand .rec-opt a {
+    display: inline-block;
+    padding: 0px 35px;
+    background: #3A71C0;
+    border-bottom: 3px solid #255EB5;
+    color: #FFF;
+    font-size: 14px;
+    line-height: 30px;
+    *display: inline;
+    *zoom: 1;
+    *width: 80px;
+}
+
+#recommand .rec-opt .rec-opt-rmd {
+    position: absolute;
+    top: 30px;
+    left: 45px;
+    color: #3A71C0;
+}
+
+#recommand .rec-opt .rec-opt-rmd label {
+    margin-left: 3px;
+}
+
+#recommand .rec-opt .rec-opt-rmd input {
+    vertical-align: middle;
+}
